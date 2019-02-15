@@ -22,6 +22,7 @@ console.log(attemptsLeft);
 var display = [answerLength];
 var output = "";
 var userLetter = "";
+var guessedLetters = [];
 
 // Break the string answer apart and store it as an array of letters
 var letters = answer.split("");
@@ -43,18 +44,25 @@ var setup = function () {
 
 var submit = function () {
     // alert("it works when clicked!")
-    // if ((userPick === "a") || (userPick === "b") || (userPick === "c") || (userPick === "d") || (userPick === "e") || (userPick === "f") || (userPick === "g") || (userPick === "h") || (userPick === "i") || (userPick === "j") || (userPick === "k") || (userPick === "l") || (userPick === "m") || (userPick === "n") || (userPick === "o") || (userPick === "p") || (userPick === "q") || (userPick === "r") || (userPick === "s") || (userPick === "t") || (userPick === "u") || (userPick === "v") || (userPick === "w") || (userPick === "x") || (userPick === "y") || (userPick === "z")) {
-    //     guessedLetters.push(userPick);
-    output = "";
-    // userLetter = $("#letter").value;
-    userLetter = document.getElementById("guessField").value;
-    console.log(userLetter);
-    // $("letter").value = "";
-    document.getElementById("guessField").value = "";
+    // verify that the user enters a letter from A-Z
+    // if ((userLetter == "a") || (userLetter === "b") || (userLetter === "c") || (userLetter === "d") || (userLetter === "e") || (userLetter === "f") || (userLetter === "g") || (userLetter === "h") || (userLetter === "i") || (userLetter === "j") || (userLetter === "k") || (userLetter === "l") || (userLetter === "m") || (userLetter === "n") || (userLetter === "o") || (userLetter === "p") || (userLetter === "q") || (userLetter === "r") || (userLetter === "s") || (userLetter === "t") || (userLetter === "u") || (userLetter === "v") || (userLetter === "w") || (userLetter === "x") || (userLetter === "y") || (userLetter === "z")) {
+    //     guessedLetters.push(userLetter);
 
-// Compare user Letter to the answer;
-// If the letter matches a letter in the answer: replace the _ with a letter in the display
-// Subtract one from the number of letters that need to be guessed to win
+        output = "";
+        // userLetter = $("#letter").value;
+        userLetter = document.getElementById("guessField").value;
+        console.log(userLetter);
+        // $("letter").value = "";
+        document.getElementById("guessField").value = "";
+        guessedLetters.push(userLetter.toUpperCase());
+
+    // else {
+    //     alert("Please choose a letter from A-Z!");
+    // }
+
+    // Compare user Letter to the answer;
+    // If the letter matches a letter in the answer: replace the _ with a letter in the display
+    // Subtract one from the number of letters that need to be guessed to win
     for (var c = 0; c < answer.length; c++) {
         // alert(letters[c]);
         if (userLetter.toUpperCase() == letters[c]) {
@@ -69,7 +77,7 @@ var submit = function () {
     attemptsLeft--;
     console.log(attemptsLeft);
 
-// Determine game status; i.e. if win < 1 or all the dashes are filled, user wins; if attemptsLeft < 1, no more guesses and user losses.  
+    // Determine game status; i.e. if win < 1 or all the dashes are filled, user wins; if attemptsLeft < 1, no more guesses and user losses.  
     if (win < 1) {
         document.getElementById("guesses").innerHTML = "Hooray, you Win!";
         document.getElementById("guesses").style.backgroundColor = "green";
@@ -79,9 +87,10 @@ var submit = function () {
         document.getElementById("guesses").style.backgroundColor = "red";
     }
     else {
+        document.getElementById("guessedLetters").innerHTML = "Letters guessed: " + guessedLetters.join(", ");
         document.getElementById("guesses").innerHTML = "You have " + attemptsLeft + " guesses left!";
     }
 }
-$(document).ready(function() {
+$(document).ready(function () {
     setup();
 });
