@@ -1,0 +1,61 @@
+@font-face {
+    font-family:"digital-7-font";
+    src: url(../digital-7/digital-7.ttf);
+}
+
+body {
+    background-image: url(../images/2017_NBA_All-Star_Game.jpg);
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    margin: 0 auto;
+    margin-top: 110px;
+    /* margin-left: -7px; */
+    max-width: 240px;
+    line-height: 25px;
+    text-align: center;
+    
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: bold;
+    color: blue;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+}
+
+#game {
+    font-family: "digital-7-font";
+    font-size: 28px;
+}
+
+a {
+    color: white;
+}
+
+footer {
+    clear: both;
+    overflow: auto;
+    background: #666666;
+    color: white;
+    text-align: center;
+    /* padding-top: 20px; */
+    padding-bottom: 5px;
+    border-top: 4px solid blue;
+    /* to make a sticky footer */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 5;
+    }

@@ -11,18 +11,30 @@
   <!--     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
     crossorigin="anonymous"> -->
   <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-  <script src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <header>
-    <h1>Press Any Key to Start</h1>>
-  </header>
+  <div class="container">
+    <header>
+      <h1>Hangman Game</h1>
+      <h2>NBA Edition</h2>
+    </header>
 
-  <p id="game"></p>
+    <p id="game"></p>
 
+    <label for="guessField">Enter a letter to guess the NBA team: </label><br><input type="text" id="guessField"
+      class="guessField">
+    <input type="submit" value="Submit letter" class="letterSubmit" onclick="submit()" />
+  
+    <p id="guesses"></p>
+  </div>
+
+  <footer class="footer">
+    Copyright &circledR;
+    <a href="https://echiang73.github.io/"> Eddie Chiang </a>2019
+  </footer>
 
   <script type="text/javascript" src="assets/javascript/game.js"></script>
 
