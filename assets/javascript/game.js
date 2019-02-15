@@ -29,20 +29,6 @@ var letters = answer.split("");
 
 // Local Codes - The Game
 
-//Click any key to start
-// document.onkeyup = function(start); {
-
-// }
-
-// Load function
-// $(document).ready(function() {
-//     $("#game").on("click", function() {
-//       alert("I've been clicked!");
-//     });
-//   });
-
-
-
 // setup display letters to be guessed in HTML
 var setup = function () {
     for (var i = 0; i < answer.length; i++) {
@@ -57,6 +43,8 @@ var setup = function () {
 
 var submit = function () {
     // alert("it works when clicked!")
+    // if ((userPick === "a") || (userPick === "b") || (userPick === "c") || (userPick === "d") || (userPick === "e") || (userPick === "f") || (userPick === "g") || (userPick === "h") || (userPick === "i") || (userPick === "j") || (userPick === "k") || (userPick === "l") || (userPick === "m") || (userPick === "n") || (userPick === "o") || (userPick === "p") || (userPick === "q") || (userPick === "r") || (userPick === "s") || (userPick === "t") || (userPick === "u") || (userPick === "v") || (userPick === "w") || (userPick === "x") || (userPick === "y") || (userPick === "z")) {
+    //     guessedLetters.push(userPick);
     output = "";
     // userLetter = $("#letter").value;
     userLetter = document.getElementById("guessField").value;
@@ -64,6 +52,9 @@ var submit = function () {
     // $("letter").value = "";
     document.getElementById("guessField").value = "";
 
+// Compare user Letter to the answer;
+// If the letter matches a letter in the answer: replace the _ with a letter in the display
+// Subtract one from the number of letters that need to be guessed to win
     for (var c = 0; c < answer.length; c++) {
         // alert(letters[c]);
         if (userLetter.toUpperCase() == letters[c]) {
@@ -78,11 +69,14 @@ var submit = function () {
     attemptsLeft--;
     console.log(attemptsLeft);
 
+// Determine game status; i.e. if win < 1 or all the dashes are filled, user wins; if attemptsLeft < 1, no more guesses and user losses.  
     if (win < 1) {
         document.getElementById("guesses").innerHTML = "Hooray, you Win!";
+        document.getElementById("guesses").style.backgroundColor = "green";
     }
     else if (attemptsLeft < 1) {
         document.getElementById("guesses").innerHTML = "Sorry, you Lose!";
+        document.getElementById("guesses").style.backgroundColor = "red";
     }
     else {
         document.getElementById("guesses").innerHTML = "You have " + attemptsLeft + " guesses left!";
@@ -91,20 +85,3 @@ var submit = function () {
 $(document).ready(function() {
     setup();
 });
-// window.onload = function () {
-//     setup();
-//     // $("letterSubmit").onclick = submit;
-    
-// }
-
-
-
-
-
-
-// Get a letter from the user
-
-// Compare user Letter to the answer:  
-//If the letter matches a letter in the answer: replace the _ with a letter in the display
-// Subtract one from the number of letters that need to be guessed to win
-
