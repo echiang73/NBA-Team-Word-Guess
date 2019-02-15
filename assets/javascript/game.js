@@ -3,9 +3,48 @@
 //Create an array of words (NBA teams)
 var wordList = ["HAWKS", "CELTICS", "NETS", "HORNETS", "BULLS", "CAVALIERS", "MAVERICKS", "NUGGETS", "PISTONS", "WARRIORS", "ROCKETS", "PACERS", "CLIPPERS", "LAKERS", "GRIZZLIES", "HEAT", "BUCKS", "TIMBERWOLVES", "PELICANS", "KNICKS", "THUNDER", "MAGIC", "SIXERS", "SUNS", "BLAZERS", "KINGS", "SPURS", "RAPTORS", "JAZZ", "WIZARDS"];
 
+// Create an array of objects (NBA teams)
+// var wordList = {
+//     "team": ["HAWKS","CELTICS", "NETS", "HORNETS", "BULLS", "CAVALIERS", "MAVERICKS", "NUGGETS", "PISTONS", "WARRIORS", "ROCKETS", "PACERS", "CLIPPERS", "LAKERS", "GRIZZLIES", "HEAT", "BUCKS", "TIMBERWOLVES", "PELICANS", "KNICKS", "THUNDER", "MAGIC", "SIXERS", "SUNS", "BLAZERS", "KINGS", "SPURS", "RAPTORS", "JAZZ", "WIZARDS"];
+//     "logos": [
+//         "hawks.png",
+//         "celtics.png",
+//         "nets.png",
+//         "hornets.png",
+//         "bulls.png",
+//         "cavaliers.png",
+//         "mavericks.png",
+//         "nuggets.png",
+//         "pistons.png",
+//         "warriors.png",
+//         "rockets.png",
+//         "pacers.png",
+//         "clippers.png",
+//         "lakers.png",
+//         "grizzlies.png",
+//         "heat.png",
+//         "buck.png",
+//         "timberwolves.png",
+//         "pelicans.png",
+//         "knicks.png",
+//         "thunder.png",
+//         "magic.png",
+//         "sixers.png",
+//         "suns.png",
+//         "blazers.png",
+//         "kings.png",
+//         "spurs.png",
+//         "raptors.png",
+//         "jazz.png",
+//         "wizards.png"
+//     ]
+// };
+
 // Generate a random number to pick a word from the array
 var choice = (Math.floor(Math.random() * wordList.length));
+// var choice = (Math.floor(Math.random() * wordList.team.length));
 var answer = wordList[choice];
+// var answer = wordList.team[choice];
 var answerLength = answer.length;
 console.log(choice);
 console.log(answer);
@@ -30,7 +69,7 @@ var letters = answer.split("");
 
 // Local Codes - The Game
 
-// setup display letters to be guessed in HTML
+// Setup display letters to be guessed in HTML
 var setup = function () {
     for (var i = 0; i < answer.length; i++) {
         display[i] = "_ ";
@@ -45,7 +84,7 @@ var setup = function () {
 var submit = function () {
     // alert("it works when clicked!")
     // verify that the user enters a letter from A-Z
-    // if ((userLetter == "a") || (userLetter === "b") || (userLetter === "c") || (userLetter === "d") || (userLetter === "e") || (userLetter === "f") || (userLetter === "g") || (userLetter === "h") || (userLetter === "i") || (userLetter === "j") || (userLetter === "k") || (userLetter === "l") || (userLetter === "m") || (userLetter === "n") || (userLetter === "o") || (userLetter === "p") || (userLetter === "q") || (userLetter === "r") || (userLetter === "s") || (userLetter === "t") || (userLetter === "u") || (userLetter === "v") || (userLetter === "w") || (userLetter === "x") || (userLetter === "y") || (userLetter === "z")) {
+    // if ((userLetter === "a") || (userLetter === "b") || (userLetter === "c") || (userLetter === "d") || (userLetter === "e") || (userLetter === "f") || (userLetter === "g") || (userLetter === "h") || (userLetter === "i") || (userLetter === "j") || (userLetter === "k") || (userLetter === "l") || (userLetter === "m") || (userLetter === "n") || (userLetter === "o") || (userLetter === "p") || (userLetter === "q") || (userLetter === "r") || (userLetter === "s") || (userLetter === "t") || (userLetter === "u") || (userLetter === "v") || (userLetter === "w") || (userLetter === "x") || (userLetter === "y") || (userLetter === "z")) {
     //     guessedLetters.push(userLetter);
 
         output = "";
@@ -75,7 +114,7 @@ var submit = function () {
     document.getElementById("game").innerHTML = output;
     output = "";
     attemptsLeft--;
-    console.log(attemptsLeft);
+    // console.log(attemptsLeft);
 
     // Determine game status; i.e. if win < 1 or all the dashes are filled, user wins; if attemptsLeft < 1, no more guesses and user losses.  
     if (win < 1) {
