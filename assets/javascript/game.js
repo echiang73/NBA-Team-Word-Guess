@@ -1,50 +1,50 @@
 // Global Codes - Setup
 
 //Create an array of words (NBA teams)
-var wordList = ["HAWKS", "CELTICS", "NETS", "HORNETS", "BULLS", "CAVALIERS", "MAVERICKS", "NUGGETS", "PISTONS", "WARRIORS", "ROCKETS", "PACERS", "CLIPPERS", "LAKERS", "GRIZZLIES", "HEAT", "BUCKS", "TIMBERWOLVES", "PELICANS", "KNICKS", "THUNDER", "MAGIC", "SIXERS", "SUNS", "BLAZERS", "KINGS", "SPURS", "RAPTORS", "JAZZ", "WIZARDS"];
+// var wordList = ["HAWKS", "CELTICS", "NETS", "HORNETS", "BULLS", "CAVALIERS", "MAVERICKS", "NUGGETS", "PISTONS", "WARRIORS", "ROCKETS", "PACERS", "CLIPPERS", "LAKERS", "GRIZZLIES", "HEAT", "BUCKS", "TIMBERWOLVES", "PELICANS", "KNICKS", "THUNDER", "MAGIC", "SIXERS", "SUNS", "BLAZERS", "KINGS", "SPURS", "RAPTORS", "JAZZ", "WIZARDS"];
 
 // Create an array of objects (NBA teams)
-// var wordList = {
-//     "team": ["HAWKS","CELTICS", "NETS", "HORNETS", "BULLS", "CAVALIERS", "MAVERICKS", "NUGGETS", "PISTONS", "WARRIORS", "ROCKETS", "PACERS", "CLIPPERS", "LAKERS", "GRIZZLIES", "HEAT", "BUCKS", "TIMBERWOLVES", "PELICANS", "KNICKS", "THUNDER", "MAGIC", "SIXERS", "SUNS", "BLAZERS", "KINGS", "SPURS", "RAPTORS", "JAZZ", "WIZARDS"];
-//     "logos": [
-//         "hawks.png",
-//         "celtics.png",
-//         "nets.png",
-//         "hornets.png",
-//         "bulls.png",
-//         "cavaliers.png",
-//         "mavericks.png",
-//         "nuggets.png",
-//         "pistons.png",
-//         "warriors.png",
-//         "rockets.png",
-//         "pacers.png",
-//         "clippers.png",
-//         "lakers.png",
-//         "grizzlies.png",
-//         "heat.png",
-//         "buck.png",
-//         "timberwolves.png",
-//         "pelicans.png",
-//         "knicks.png",
-//         "thunder.png",
-//         "magic.png",
-//         "sixers.png",
-//         "suns.png",
-//         "blazers.png",
-//         "kings.png",
-//         "spurs.png",
-//         "raptors.png",
-//         "jazz.png",
-//         "wizards.png"
-//     ]
-// };
+var wordList = {
+    "team": ["HAWKS","CELTICS", "NETS", "HORNETS", "BULLS", "CAVALIERS", "MAVERICKS", "NUGGETS", "PISTONS", "WARRIORS", "ROCKETS", "PACERS", "CLIPPERS", "LAKERS", "GRIZZLIES", "HEAT", "BUCKS", "TIMBERWOLVES", "PELICANS", "KNICKS", "THUNDER", "MAGIC", "SIXERS", "SUNS", "BLAZERS", "KINGS", "SPURS", "RAPTORS", "JAZZ", "WIZARDS"],
+    "logos": [
+        "hawks.png",
+        "celtics.png",
+        "nets.png",
+        "hornets.png",
+        "bulls.png",
+        "cavaliers.png",
+        "mavericks.png",
+        "nuggets.png",
+        "pistons.png",
+        "warriors.png",
+        "rockets.png",
+        "pacers.png",
+        "clippers.png",
+        "lakers.png",
+        "grizzlies.png",
+        "heat.png",
+        "buck.png",
+        "timberwolves.png",
+        "pelicans.png",
+        "knicks.png",
+        "thunder.png",
+        "magic.png",
+        "sixers.png",
+        "suns.png",
+        "blazers.png",
+        "kings.png",
+        "spurs.png",
+        "raptors.png",
+        "jazz.png",
+        "wizards.png"
+    ]
+};
 
 // Generate a random number to pick a word from the array
-var choice = (Math.floor(Math.random() * wordList.length));
-// var choice = (Math.floor(Math.random() * wordList.team.length));
-var answer = wordList[choice];
-// var answer = wordList.team[choice];
+// var choice = (Math.floor(Math.random() * wordList.length));
+var choice = (Math.floor(Math.random() * wordList.team.length));
+// var answer = wordList[choice];
+var answer = wordList.team[choice];
 var answerLength = answer.length;
 console.log(choice);
 console.log(answer);
