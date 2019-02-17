@@ -45,6 +45,18 @@ h2 {
     line-height: 16px;
 }
 
+/* #winteamlogo {
+    margin-top: 100px;
+    margin: 0, auto;
+} */
+
+img {
+    margin-top: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+  }
 
 a {
     color: white;

@@ -40,15 +40,23 @@ var wordList = {
     ]
 };
 
-// Generate a random number to pick a word from the array
+// Alternative: Generate a random number to pick a word from the array
 // var choice = (Math.floor(Math.random() * wordList.length));
-var choice = (Math.floor(Math.random() * wordList.team.length));
 // var answer = wordList[choice];
+
+// Generate a random number to pick a word from the array of objects
+var choice = (Math.floor(Math.random() * wordList.team.length));
 var answer = wordList.team[choice];
+
 var answerLength = answer.length;
 console.log(choice);
 console.log(answer);
 console.log(answerLength);
+
+// Create element "IMG" and assign to variable, add attributes
+var winnerLogo = document.createElement("img");
+winnerLogo.src = "assets/images/logos/" + wordList.logos[choice];
+winnerLogo.style = "width: 300px";
 
 // Determine how many letters need to be guessed to win the game
 var win = answerLength;
@@ -120,6 +128,8 @@ var submit = function () {
     if (win < 1) {
         document.getElementById("guesses").innerHTML = "Hooray, you Win!";
         document.getElementById("guesses").style.backgroundColor = "green";
+        // document.getElementById("winteamlogo").innerHTML = winnerLogo;
+        document.body.appendChild(winnerLogo);
     }
     else if (attemptsLeft < 1) {
         document.getElementById("guesses").innerHTML = "Sorry, you Lose!";
