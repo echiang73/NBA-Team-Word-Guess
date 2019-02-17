@@ -38,6 +38,7 @@ h2 {
     font-family: "digital-7-font";
     font-size: 28px;
     color: blue;
+    margin-top: 10px;
 }
 
 #guessedLetters {

@@ -1,11 +1,11 @@
 // Global Codes - Setup
 
-//Create an array of words (NBA teams)
+// Create an array of words (NBA teams)
 // var wordList = ["HAWKS", "CELTICS", "NETS", "HORNETS", "BULLS", "CAVALIERS", "MAVERICKS", "NUGGETS", "PISTONS", "WARRIORS", "ROCKETS", "PACERS", "CLIPPERS", "LAKERS", "GRIZZLIES", "HEAT", "BUCKS", "TIMBERWOLVES", "PELICANS", "KNICKS", "THUNDER", "MAGIC", "SIXERS", "SUNS", "BLAZERS", "KINGS", "SPURS", "RAPTORS", "JAZZ", "WIZARDS"];
 
-// Create an array of objects (NBA teams)
+// Alternative: Create an array of objects (NBA teams with logos)
 var wordList = {
-    "team": ["HAWKS","CELTICS", "NETS", "HORNETS", "BULLS", "CAVALIERS", "MAVERICKS", "NUGGETS", "PISTONS", "WARRIORS", "ROCKETS", "PACERS", "CLIPPERS", "LAKERS", "GRIZZLIES", "HEAT", "BUCKS", "TIMBERWOLVES", "PELICANS", "KNICKS", "THUNDER", "MAGIC", "SIXERS", "SUNS", "BLAZERS", "KINGS", "SPURS", "RAPTORS", "JAZZ", "WIZARDS"],
+    "team": ["HAWKS", "CELTICS", "NETS", "HORNETS", "BULLS", "CAVALIERS", "MAVERICKS", "NUGGETS", "PISTONS", "WARRIORS", "ROCKETS", "PACERS", "CLIPPERS", "LAKERS", "GRIZZLIES", "HEAT", "BUCKS", "TIMBERWOLVES", "PELICANS", "KNICKS", "THUNDER", "MAGIC", "SIXERS", "SUNS", "BLAZERS", "KINGS", "SPURS", "RAPTORS", "JAZZ", "WIZARDS"],
     "logos": [
         "hawks.png",
         "celtics.png",
@@ -23,7 +23,7 @@ var wordList = {
         "lakers.png",
         "grizzlies.png",
         "heat.png",
-        "buck.png",
+        "bucks.png",
         "timberwolves.png",
         "pelicans.png",
         "knicks.png",
@@ -40,11 +40,11 @@ var wordList = {
     ]
 };
 
-// Alternative: Generate a random number to pick a word from the array
+// Generate a random number to pick a word from the array
 // var choice = (Math.floor(Math.random() * wordList.length));
 // var answer = wordList[choice];
 
-// Generate a random number to pick a word from the array of objects
+// Alternative: Generate a random number to pick a word from the array of objects
 var choice = (Math.floor(Math.random() * wordList.team.length));
 var answer = wordList.team[choice];
 
@@ -90,22 +90,11 @@ var setup = function () {
 }
 
 var submit = function () {
-    // alert("it works when clicked!")
-    // verify that the user enters a letter from A-Z
-    // if ((userLetter === "a") || (userLetter === "b") || (userLetter === "c") || (userLetter === "d") || (userLetter === "e") || (userLetter === "f") || (userLetter === "g") || (userLetter === "h") || (userLetter === "i") || (userLetter === "j") || (userLetter === "k") || (userLetter === "l") || (userLetter === "m") || (userLetter === "n") || (userLetter === "o") || (userLetter === "p") || (userLetter === "q") || (userLetter === "r") || (userLetter === "s") || (userLetter === "t") || (userLetter === "u") || (userLetter === "v") || (userLetter === "w") || (userLetter === "x") || (userLetter === "y") || (userLetter === "z")) {
-    //     guessedLetters.push(userLetter);
-
-        output = "";
-        // userLetter = $("#letter").value;
-        userLetter = document.getElementById("guessField").value;
-        console.log(userLetter);
-        // $("letter").value = "";
-        document.getElementById("guessField").value = "";
-        guessedLetters.push(userLetter.toUpperCase());
-
-    // else {
-    //     alert("Please choose a letter from A-Z!");
-    // }
+    output = "";
+    userLetter = document.getElementById("guessField").value;
+    console.log(userLetter);
+    document.getElementById("guessField").value = "";
+    guessedLetters.push(userLetter.toUpperCase());
 
     // Compare user Letter to the answer;
     // If the letter matches a letter in the answer: replace the _ with a letter in the display
@@ -128,12 +117,13 @@ var submit = function () {
     if (win < 1) {
         document.getElementById("guesses").innerHTML = "Hooray, you Win!";
         document.getElementById("guesses").style.backgroundColor = "green";
-        // document.getElementById("winteamlogo").innerHTML = winnerLogo;
         document.body.appendChild(winnerLogo);
+
     }
     else if (attemptsLeft < 1) {
         document.getElementById("guesses").innerHTML = "Sorry, you Lose!";
         document.getElementById("guesses").style.backgroundColor = "red";
+        document.body.appendChild(winnerLogo);
     }
     else {
         document.getElementById("guessedLetters").innerHTML = "Letters guessed: " + guessedLetters.join(", ");
