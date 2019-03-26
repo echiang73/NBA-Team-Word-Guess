@@ -18,6 +18,6 @@ https://echiang73.github.io/NBA-Team-Word-Guess/
 * Digital-7 font using @font-face
 * Media query for responsive web design
 
-### Here are the previews of the web application:
+### Here is the preview of the web application:
 
 ![](assets/images/webpreview.gif "gif")
